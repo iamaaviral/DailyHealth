@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		flexDirection: 'column',
 		alignSelf: 'stretch',
-		paddingTop: 50,
+		paddingTop: 20,
 		paddingBottom: 20,
 		backgroundColor: 'rgba(0,170,170,0.1)'
 	},

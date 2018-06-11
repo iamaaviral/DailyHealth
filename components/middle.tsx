@@ -1,32 +1,31 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Button, Alert } from "react-native";
-
-import Activity from "./Activity";
+import { Tabs } from "./config/router";
 
 export default class Middle extends Component {
 
 
   render() {
     return (
-        <View style={styles.slide}>
-          <View style={styles.Activity_row}>
-            <View style={styles.slide}>
-            </View>
-          </View>
-          <Activity />
-        </View>
+      <View style={styles.container}>
+      <View style={styles.body}>
+         <Tabs />
+      </View>
+    </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  slide: {
-    flex: 1
+  container: {
+    flex: 1,
+    alignItems: "center",
+    alignSelf: "stretch",
+    justifyContent: "center"
   },
-  Activity_row: {
-    flex: 0,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
+  body: {
+    flex: 15,
+    flexDirection: "column",
+    alignSelf: "stretch"
   }
 });

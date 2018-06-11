@@ -328,8 +328,6 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   body: {
-    // flex: 25,
-    // justifyContent: 'space-between',
     flex: 15,
     flexDirection: "column",
     alignSelf: "stretch"
