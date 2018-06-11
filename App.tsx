@@ -14,9 +14,9 @@ import {
   Text,
   View
 } from 'react-native';
-import Hello from './components/Hello';
 import Header from "./components/Header";
 import Bmi from "./components/bmi";
+import { Tabs } from './components/config/router';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -32,7 +32,7 @@ export default class App extends Component<Props> {
       <View style={styles.container}>
         <Header />
         <View style={styles.body}>
-        <Hello name=" Aerial Srivastava" enthusiasmLevel= {5} />
+        <Tabs />
         </View>
         <Bmi />
       </View>
