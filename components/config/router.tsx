@@ -2,8 +2,8 @@ import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Header from '../Header';
-import Bmi from '../bmi';
+import mks_page from '../mks-page';
+import cgs_page from '../cgs-page';
 
 // export const FeedStack = StackNavigator({
 //   Feed: {
@@ -22,14 +22,14 @@ import Bmi from '../bmi';
 
 export const Tabs = TabNavigator({
   Mks: {
-    screen: Header,
+    screen: mks_page,
     navigationOptions: {
       tabBarLabel: 'in MKS',
       tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
     },
   },
   Cgs: {
-    screen: Bmi,
+    screen: cgs_page,
     navigationOptions: {
       tabBarLabel: 'in CGS',
       tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
