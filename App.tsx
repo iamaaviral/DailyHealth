@@ -15,6 +15,8 @@ import {
   View
 } from 'react-native';
 import Hello from './components/Hello';
+import Header from "./components/Header";
+import Bmi from "./components/bmi";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -28,16 +30,11 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        {/* <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text> */}
-        <Hello name="abc"/>
+        <Header />
+        <View style={styles.body}>
+        <Hello name=" Aerial Srivastava" enthusiasmLevel= {5} />
+        </View>
+        <Bmi />
       </View>
     );
   }
@@ -46,18 +43,19 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems: "center",
+    alignSelf: "stretch",
+    justifyContent: "center"
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  body: {
+    // flex: 25,
+    // justifyContent: 'space-between',
+    flex: 15,
+    flexDirection: "column",
+    alignSelf: "stretch",
+    padding: 10,
+    backgroundColor: "rgba(0,170,170,0.5)",
+    borderBottomWidth: 2,
+    borderColor: "grey"
+  }
 });
