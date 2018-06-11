@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import Header from "./components/Header";
 import Bmi from "./components/bmi";
-import { Tabs } from './components/config/router';
+import Middle from "./components/middle"
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -32,7 +32,7 @@ export default class App extends Component<Props> {
       <View style={styles.container}>
         <Header />
         <View style={styles.body}>
-        <Tabs />
+        <Middle />
         </View>
         <Bmi />
       </View>
