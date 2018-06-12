@@ -11,11 +11,6 @@ import { Tabs } from "./components/config/router";
 import Header from "./components/Header";
 import * as data from "./customData.json";
 
-export interface IFrontPageProps {
-  data: number;
-
-}
-
 export interface IPinPageState {
   data: any;
 }
@@ -29,11 +24,19 @@ const instructions = Platform.select({
     "Cmd+D or shake for dev menu",
 });
 
-export default class App extends Component<IFrontPageProps, IPinPageState> {
-  constructor(props: IFrontPageProps) {
+export default class App extends Component<any, IPinPageState> {
+  constructor(props: any) {
     super(props);
     this.state = {
-      data: {data},
+     data: {
+      calories: 37,
+      climbed: 0,
+      distance: 1050,
+      heartRate: 72,
+      height: 1.7,
+      steps: 1505,
+      weight: 64,
+     },
     };
 }
   public render() {

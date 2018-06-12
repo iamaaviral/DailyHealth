@@ -13,8 +13,8 @@ export default class Bmi extends React.Component<IPinPageProps, IPinPageState> {
   constructor(props: IPinPageProps) {
     super(props);
     this.state = {
-      height: this.props.data.data.height,
-      weight: this.props.data.data.weight,
+      height: this.props.data.height,
+      weight: this.props.data.weight,
     };
 }
   public render() {

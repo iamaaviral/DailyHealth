@@ -25,13 +25,13 @@ export default class ActivityData extends React.Component<IDataPageProps, any> {
             <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
           </View>
           <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.Distance} m</Text>
+            <Text style={styles.Activity_text}>{this.props.data.distance} m</Text>
           </View>
           <View style={styles.Activity_row}>
             <Text style={styles.Activity_text}>{this.props.data.climbed} m</Text>
           </View>
           <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.calories * 1000} kcal</Text>
+            <Text style={styles.Activity_text}>{this.props.data.calories / 1000} kcal</Text>
           </View>
           <View style={styles.Activity_row}>
             <Text style={styles.Activity_text}>
@@ -53,7 +53,7 @@ export default class ActivityData extends React.Component<IDataPageProps, any> {
             <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
           </View>
           <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.Distance * 100} cm</Text>
+            <Text style={styles.Activity_text}>{this.props.data.distance * 100} cm</Text>
           </View>
           <View style={styles.Activity_row}>
             <Text style={styles.Activity_text}>{this.props.data.climbed * 100} cm</Text>
