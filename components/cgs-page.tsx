@@ -1,13 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TextInput } from "react-native";
 import Activity_list from "./activity_list";
+import Activity_data from "./activity_data";
 
 export default class cgs_page extends React.Component<any,any> {
 
   render() {
       return (
         <View style={styles.Activity}>
+            <View>
             <Activity_list />
+          </View>
+          <View>
+            <Activity_data />
+          </View>
         </View>
       );
   }
@@ -16,17 +22,8 @@ export default class cgs_page extends React.Component<any,any> {
 const styles = StyleSheet.create({
   Activity: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-around"
-  },
-  Activity_row: {
-    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
-  },
-  Activity_text: {
-    paddingLeft: 10,
-    fontSize: 17
+    padding: 15
   }
 });
