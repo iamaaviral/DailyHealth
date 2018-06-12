@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TextInput } from "react-native";
 
-export default class Activity_list extends React.Component {
+export default class Activity_list extends React.Component<any,any> {
 
   render() {
       return (

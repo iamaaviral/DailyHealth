@@ -7,7 +7,7 @@ import {
 
 
     //  var bmi = Math.round((data.weight / (data.height * data.height))*100)/100;
-export default class Bmi extends React.Component {
+export default class Bmi extends React.Component<any,any> {
 	render() {
 		return (
 			<View style={styles.bmi}>

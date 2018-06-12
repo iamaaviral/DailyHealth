@@ -25,8 +25,11 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+type IAppProps = {};
+export default class App extends Component<IAppProps> {
+  constructor(props:IAppProps){
+  super(props)
+}
   render() {
     return (
       <View style={styles.container}>

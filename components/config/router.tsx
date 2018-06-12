@@ -25,14 +25,14 @@ export const Tabs = TabNavigator({
     screen: mks_page,
     navigationOptions: {
       tabBarLabel: 'in MKS',
-      tabBarIcon: ({ tintColor }) => <Icon name="list" size={35} color={tintColor} />,
+      tabBarIcon: ({ tintColor } : { tintColor: any}) => <Icon name="list" size={35} color={tintColor} />,
     },
   },
   Cgs: {
     screen: cgs_page,
     navigationOptions: {
       tabBarLabel: 'in CGS',
-      tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
+      tabBarIcon: ({ tintColor } : { tintColor: any}) => <Icon name="account-circle" size={35} color={tintColor} />
     },
   },
 });

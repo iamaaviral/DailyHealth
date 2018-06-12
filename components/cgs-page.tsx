@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TextInput } from "react-native";
 import Activity_list from "./activity_list";
 
-export default class cgs_page extends React.Component {
+export default class cgs_page extends React.Component<any,any> {
 
   render() {
       return (
