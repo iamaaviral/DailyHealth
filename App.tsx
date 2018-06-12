@@ -13,6 +13,7 @@ import * as data from "./customData.json";
 
 export interface IPinPageState {
   data: any;
+  editing: boolean;
 }
 
 // const word: any = (data).name;
@@ -37,16 +38,21 @@ export default class App extends Component<any, IPinPageState> {
       steps: 1505,
       weight: 64,
      },
+     editing: false,
     };
 }
+
+  public onEdit = () =>
+  this.setState({editing : !this.state.editing})
+
   public render() {
     return (
       <View style={styles.container}>
         <Header />
         <View style={styles.body}>
-        <Tabs screenProps={{ data: this.state.data}}/>
+        <Tabs screenProps={{ data: this.state.data , editing: this.state.editing}} />
         </View>
-        <Bmi data={this.state.data}/>
+        <Bmi data={this.state.data} handleClick={this.onEdit.bind(this)} />
       </View>
     );
   }

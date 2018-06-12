@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 //  var bmi =
 export interface IPinPageProps {
   data: any;
+  handleClick: any;
 }
 export interface IPinPageState {
   weight: number;
@@ -17,6 +18,7 @@ export default class Bmi extends React.Component<IPinPageProps, IPinPageState> {
       weight: this.props.data.weight,
     };
 }
+
   public render() {
     const bmi = Math.round((this.state.weight / (this.state.height * this.state.height)) * 100) / 100;
     return (
@@ -24,6 +26,14 @@ export default class Bmi extends React.Component<IPinPageProps, IPinPageState> {
         <Text style={styles.bmi_text}>
           Your BMI : {bmi}
         </Text>
+        <View style={styles.button}>
+            <Button
+              title="edit"
+              onPress={this.props.handleClick}
+              accessibilityLabel="decrement"
+              color="blue"
+            />
+          </View>
       </View>
     );
   }
@@ -31,14 +41,20 @@ export default class Bmi extends React.Component<IPinPageProps, IPinPageState> {
 
 const styles = StyleSheet.create({
   bmi: {
-    alignSelf: "stretch",
+    alignItems: "center",
     backgroundColor: "rgba(0,170,170,0.1)",
     flex: 2,
-    flexDirection: "column",
-    justifyContent: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   bmi_text: {
     fontSize: 18,
     fontWeight: "bold",
+  },
+  button: {
+    flex: 1,
+    paddingLeft: 125,
+    paddingRight: 20,
+    paddingVertical: 0,
   },
 });

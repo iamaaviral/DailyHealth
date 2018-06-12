@@ -42,6 +42,7 @@ export default class MksPage extends React.Component<
           <ActivityData
             data={this.props.screenProps.data}
             screenNumber={this.state.screenNumber}
+            editing={this.props.screenProps.editing}
           />
         </View>
       </View>

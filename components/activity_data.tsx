@@ -4,73 +4,157 @@ import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 export interface IDataPageProps {
   data: any;
   screenNumber: number;
+  editing: boolean;
 }
 
-export default class ActivityData extends React.Component<IDataPageProps, any> {
+export interface IDataPageState {
+  text: string;
+}
+
+export default class ActivityData extends React.Component<IDataPageProps, IDataPageState> {
   constructor(props: IDataPageProps) {
     super(props);
+    this.state = {
+      text: "upadate your data",
+    };
   }
+
+  // public updateTextField = (value: string) => {
+  //   TodosStore.updateTextInputValue(value);
+  // }
 
   public render() {
     if (this.props.screenNumber === 1) {
-      return (
-        <View style={styles.Activity}>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.weight} kg</Text>
+      if (this.props.editing) {
+
+        return (
+          <View style={styles.Activity}>
+            <View style={styles.Activity_row}>
+            <TextInput
+                value={this.props.data.weight}
+                onChangeText={(text) => this.setState({text})}
+              /><Text style={styles.Activity_text}>kg</Text>
+            </View>
+            <View style={styles.Activity_row}>
+            <TextInput
+                value={this.props.data.height}
+                onChangeText={(text) => this.setState({text})}
+              /><Text style={styles.Activity_text}> m</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.distance} m</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.climbed} m</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.calories / 1000} kcal</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>
+                {this.props.data.heartRate} bps
+              </Text>
+            </View>
           </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.height} m</Text>
+        );
+      } else {
+        return (
+          <View style={styles.Activity}>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.weight} kg</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.height} m</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.distance} m</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.climbed} m</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.calories / 1000} kcal</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>
+                {this.props.data.heartRate} bps
+              </Text>
+            </View>
           </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
-          </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.distance} m</Text>
-          </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.climbed} m</Text>
-          </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.calories / 1000} kcal</Text>
-          </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>
-              {this.props.data.heartRate} bps
-            </Text>
-          </View>
-        </View>
-      );
+        ); }
     } else if (this.props.screenNumber === 2) {
-      return (
-        <View style={styles.Activity}>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.weight * 1000} g</Text>
+      if (this.props.editing) {
+        return (
+          <View style={styles.Activity}>
+            <View style={styles.Activity_row}>
+            <TextInput
+                value={this.props.data.weight}
+                onChangeText={(text) => this.setState({text})}
+              /><Text style={styles.Activity_text}>g</Text>
+            </View>
+            <View style={styles.Activity_row}>
+            <TextInput
+                value={this.props.data.height}
+                onChangeText={(text) => this.setState({text})}
+              /><Text style={styles.Activity_text}> cm</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.distance * 100} cm</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.climbed * 100} cm</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.calories } cal</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>
+                {this.props.data.heartRate} bps
+              </Text>
+            </View>
           </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.height * 100} cm</Text>
+        );
+      } else {
+        return (
+          <View style={styles.Activity}>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.weight * 1000} g</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.height * 100} cm</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.distance * 100} cm</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.climbed * 100} cm</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>{this.props.data.calories } cal</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>
+                {this.props.data.heartRate} bps
+              </Text>
+            </View>
           </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
-          </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.distance * 100} cm</Text>
-          </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.climbed * 100} cm</Text>
-          </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.calories } cal</Text>
-          </View>
-          <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>
-              {this.props.data.heartRate} bps
-            </Text>
-          </View>
-        </View>
-      );
+        );
+      }
+      }
     }
   }
-}
 
 const styles = StyleSheet.create({
   Activity: {
