@@ -1,13 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-// import React, { Component } from 'react';
 import * as React from "react";
 import { Component } from "react";
-
 import {
   Platform,
   StyleSheet,
@@ -17,6 +9,18 @@ import {
 import Bmi from "./components/bmi";
 import { Tabs } from "./components/config/router";
 import Header from "./components/Header";
+import * as data from "./customData.json";
+
+export interface IFrontPageProps {
+  data: number;
+
+}
+
+export interface IPinPageState {
+  data: any;
+}
+
+// const word: any = (data).name;
 
 const instructions = Platform.select({
   android: "Double tap R on your keyboard to reload,\n" +
@@ -25,7 +29,13 @@ const instructions = Platform.select({
     "Cmd+D or shake for dev menu",
 });
 
-export default class App extends Component {
+export default class App extends Component<IFrontPageProps, IPinPageState> {
+  constructor(props: IFrontPageProps) {
+    super(props);
+    this.state = {
+      data: {data},
+    };
+}
   public render() {
     return (
       <View style={styles.container}>
@@ -33,7 +43,7 @@ export default class App extends Component {
         <View style={styles.body}>
         <Tabs />
         </View>
-        <Bmi />
+        <Bmi data={this.state.data}/>
       </View>
     );
   }

@@ -1,12 +1,28 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-//  var bmi = Math.round((data.weight / (data.height * data.height))*100)/100;
-export default class Bmi extends React.Component<any, any> {
+//  var bmi =
+export interface IPinPageProps {
+  data: any;
+}
+export interface IPinPageState {
+  weight: number;
+  height: number;
+}
+export default class Bmi extends React.Component<IPinPageProps, IPinPageState> {
+  constructor(props: IPinPageProps) {
+    super(props);
+    this.state = {
+      height: this.props.data.height,
+      weight: this.props.data.weight,
+    };
+}
   public render() {
     return (
       <View style={styles.bmi}>
-        <Text style={styles.bmi_text}>Your BMI : </Text>
+        <Text style={styles.bmi_text}>
+          Your BMI : { Math.round((this.state.weight / (this.state.height * this.state.height)) * 100) / 100 }
+        </Text>
       </View>
     );
   }
