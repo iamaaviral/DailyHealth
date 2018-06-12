@@ -31,7 +31,7 @@ export default class ActivityData extends React.Component<IDataPageProps, any> {
             <Text style={styles.Activity_text}>{this.props.data.climbed} m</Text>
           </View>
           <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.calories} cal</Text>
+            <Text style={styles.Activity_text}>{this.props.data.calories * 1000} kcal</Text>
           </View>
           <View style={styles.Activity_row}>
             <Text style={styles.Activity_text}>
@@ -47,19 +47,19 @@ export default class ActivityData extends React.Component<IDataPageProps, any> {
             <Text style={styles.Activity_text}>{this.props.data.weight * 1000} g</Text>
           </View>
           <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.height / 1000} km</Text>
+            <Text style={styles.Activity_text}>{this.props.data.height * 100} cm</Text>
           </View>
           <View style={styles.Activity_row}>
             <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
           </View>
           <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.Distance / 1000} km</Text>
+            <Text style={styles.Activity_text}>{this.props.data.Distance * 100} cm</Text>
           </View>
           <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.climbed / 1000} km</Text>
+            <Text style={styles.Activity_text}>{this.props.data.climbed * 100} cm</Text>
           </View>
           <View style={styles.Activity_row}>
-            <Text style={styles.Activity_text}>{this.props.data.calories / 1000} kcal</Text>
+            <Text style={styles.Activity_text}>{this.props.data.calories } cal</Text>
           </View>
           <View style={styles.Activity_row}>
             <Text style={styles.Activity_text}>
