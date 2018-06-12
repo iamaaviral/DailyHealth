@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import Header from "./components/Header";
 import Bmi from "./components/bmi";
-import Middle from "./components/middle"
+import { Tabs } from "./components/config/router";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -35,7 +35,7 @@ export default class App extends Component<IAppProps> {
       <View style={styles.container}>
         <Header />
         <View style={styles.body}>
-        <Middle />
+        <Tabs />
         </View>
         <Bmi />
       </View>
@@ -55,10 +55,6 @@ const styles = StyleSheet.create({
     // justifyContent: 'space-between',
     flex: 15,
     flexDirection: "column",
-    alignSelf: "stretch",
-    padding: 10,
-    backgroundColor: "rgba(0,170,170,0.5)",
-    borderBottomWidth: 2,
-    borderColor: "grey"
+    alignSelf: "stretch"
   }
 });
