@@ -3,19 +3,47 @@ import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 import Activity_data from "./activity_data";
 import Activity_list from "./activity_list";
 
-export default class CgsPage extends React.Component<any, any> {
-
+export interface IPinPageProps {
+  screenProps: any;
+  tabBarLabel: string;
+}
+export interface IPinPageState {
+  screenNumber: number;
+}
+export default class MksPage extends React.Component<
+  IPinPageProps,
+  IPinPageState
+> {
+  constructor(props: IPinPageProps) {
+    super(props);
+    this.state = {
+      screenNumber: 2,
+    };
+  }
   public render() {
-      return (
-        <View style={styles.Activity}>
-            <View>
-            <Activity_list />
-          </View>
-          <View>
-            <Activity_data />
-          </View>
+    if (this.props.tabBarLabel === "in MKS") {
+      this.setState({
+        screenNumber: 1,
+      });
+    } else if (this.props.tabBarLabel === "in CGS") {
+      this.setState({
+        screenNumber: 2,
+      });
+    }
+
+    return (
+      <View style={styles.Activity}>
+        <View>
+          <Activity_list />
         </View>
-      );
+        <View>
+          <Activity_data
+            data={this.props.screenProps.data.data}
+            screenNumber={this.state.screenNumber}
+          />
+        </View>
+      </View>
+    );
   }
 }
 

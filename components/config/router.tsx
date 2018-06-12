@@ -21,19 +21,19 @@ import MksPage from "../mks-page";
 // });
 
 export const Tabs = TabNavigator({
-  Cgs: {
-    navigationOptions: {
-      tabBarIcon: ({ tintColor }: { tintColor: any}) => <Icon name="account-circle" size={35} color={tintColor} />,
-      tabBarLabel: "in CGS",
-    },
-    screen: CgsPage,
-  },
   Mks: {
     navigationOptions: {
       tabBarIcon: ({ tintColor }: { tintColor: any}) => <Icon name="list" size={35} color={tintColor} />,
       tabBarLabel: "in MKS",
     },
     screen: MksPage,
+  },
+  Cgs: {
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }: { tintColor: any}) => <Icon name="account-circle" size={35} color={tintColor} />,
+      tabBarLabel: "in CGS",
+    },
+    screen: CgsPage,
   },
 });
 

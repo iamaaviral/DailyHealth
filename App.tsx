@@ -41,12 +41,13 @@ export default class App extends Component<IFrontPageProps, IPinPageState> {
       <View style={styles.container}>
         <Header />
         <View style={styles.body}>
-        <Tabs />
+        <Tabs screenProps={{ data: this.state.data}}/>
         </View>
         <Bmi data={this.state.data}/>
       </View>
     );
   }
+
 }
 
 const styles = StyleSheet.create({

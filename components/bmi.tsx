@@ -13,15 +13,16 @@ export default class Bmi extends React.Component<IPinPageProps, IPinPageState> {
   constructor(props: IPinPageProps) {
     super(props);
     this.state = {
-      height: this.props.data.height,
-      weight: this.props.data.weight,
+      height: this.props.data.data.height,
+      weight: this.props.data.data.weight,
     };
 }
   public render() {
+    const bmi = Math.round((this.state.weight / (this.state.height * this.state.height)) * 100) / 100;
     return (
       <View style={styles.bmi}>
         <Text style={styles.bmi_text}>
-          Your BMI : { Math.round((this.state.weight / (this.state.height * this.state.height)) * 100) / 100 }
+          Your BMI : {bmi}
         </Text>
       </View>
     );
