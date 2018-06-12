@@ -1,18 +1,18 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
-import Activity_list from "./activity_list";
-import Activity_data from "./activity_data";
+import { Image, StyleSheet, Text, TextInput, View } from "react-native";
+import ActivityData from "./activity_data";
+import ActivityList from "./activity_list";
 
-export default class mks_page extends React.Component<any,any> {
+export default class MksPage extends React.Component<any, any> {
 
-  render() {
+  public render() {
       return (
         <View style={styles.Activity}>
           <View>
-            <Activity_list />
+            <ActivityList />
           </View>
           <View>
-            <Activity_data />
+            <ActivityData />
           </View>
         </View>
       );
@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    padding: 15
-  }
+    padding: 15,
+  },
 });

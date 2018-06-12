@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
-import Activity_list from "./activity_list";
+import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 import Activity_data from "./activity_data";
+import Activity_list from "./activity_list";
 
-export default class cgs_page extends React.Component<any,any> {
+export default class CgsPage extends React.Component<any, any> {
 
-  render() {
+  public render() {
       return (
         <View style={styles.Activity}>
             <View>
@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    padding: 15
-  }
+    padding: 15,
+  },
 });

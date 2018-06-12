@@ -1,9 +1,9 @@
-import React from 'react';
-import { TabNavigator, StackNavigator } from 'react-navigation';
-import { Icon } from 'react-native-elements';
+import React from "react";
+import { Icon } from "react-native-elements";
+import { StackNavigator, TabNavigator } from "react-navigation";
 
-import mks_page from '../mks-page';
-import cgs_page from '../cgs-page';
+import CgsPage from "../cgs-page";
+import MksPage from "../mks-page";
 
 // export const FeedStack = StackNavigator({
 //   Feed: {
@@ -21,19 +21,19 @@ import cgs_page from '../cgs-page';
 // });
 
 export const Tabs = TabNavigator({
-  Mks: {
-    screen: mks_page,
-    navigationOptions: {
-      tabBarLabel: 'in MKS',
-      tabBarIcon: ({ tintColor } : { tintColor: any}) => <Icon name="list" size={35} color={tintColor} />,
-    },
-  },
   Cgs: {
-    screen: cgs_page,
     navigationOptions: {
-      tabBarLabel: 'in CGS',
-      tabBarIcon: ({ tintColor } : { tintColor: any}) => <Icon name="account-circle" size={35} color={tintColor} />
+      tabBarIcon: ({ tintColor }: { tintColor: any}) => <Icon name="account-circle" size={35} color={tintColor} />,
+      tabBarLabel: "in CGS",
     },
+    screen: CgsPage,
+  },
+  Mks: {
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }: { tintColor: any}) => <Icon name="list" size={35} color={tintColor} />,
+      tabBarLabel: "in MKS",
+    },
+    screen: MksPage,
   },
 });
 

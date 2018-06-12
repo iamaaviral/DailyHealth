@@ -5,32 +5,28 @@
  */
 
 // import React, { Component } from 'react';
-import * as React from 'react'
-import { Component } from 'react';
+import * as React from "react";
+import { Component } from "react";
 
 import {
   Platform,
   StyleSheet,
   Text,
-  View
-} from 'react-native';
-import Header from "./components/Header";
+  View,
+} from "react-native";
 import Bmi from "./components/bmi";
 import { Tabs } from "./components/config/router";
+import Header from "./components/Header";
 
 const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+  android: "Double tap R on your keyboard to reload,\n" +
+    "Shake or press menu button for dev menu",
+  ios: "Press Cmd+R to reload,\n" +
+    "Cmd+D or shake for dev menu",
 });
 
-type IAppProps = {};
-export default class App extends Component<IAppProps> {
-  constructor(props:IAppProps){
-  super(props)
-}
-  render() {
+export default class App extends Component {
+  public render() {
     return (
       <View style={styles.container}>
         <Header />
@@ -44,17 +40,17 @@ export default class App extends Component<IAppProps> {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    alignSelf: "stretch",
-    justifyContent: "center"
-  },
   body: {
     // flex: 25,
     // justifyContent: 'space-between',
+    alignSelf: "stretch",
     flex: 15,
     flexDirection: "column",
-    alignSelf: "stretch"
-  }
+  },
+  container: {
+    alignItems: "center",
+    alignSelf: "stretch",
+    flex: 1,
+    justifyContent: "center",
+  },
 });

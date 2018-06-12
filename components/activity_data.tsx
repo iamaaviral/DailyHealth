@@ -1,9 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 
-export default class Activity_data extends React.Component<any,any> {
+export default class ActivityData extends React.Component<any, any> {
 
-  render() {
+  public render() {
       return (
         <View style={styles.Activity}>
           <View style={styles.Activity_row}>
@@ -36,16 +36,16 @@ const styles = StyleSheet.create({
   Activity: {
     flex: 1,
     flexDirection: "column",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
   },
   Activity_row: {
+    alignItems: "center",
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
   },
   Activity_text: {
+    fontSize: 17,
     paddingLeft: 10,
-    fontSize: 17
-  }
+  },
 });

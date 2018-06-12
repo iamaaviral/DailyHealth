@@ -3,20 +3,12 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import 'react-native'
 
-import { Header } from "../Header"
+import Header from '../Header';
 
-it("renders correctly with defaults", () => {
+test("'Header snapshot", () => {
   const snap = renderer.create(
     <Header />
   ).toJSON()
 
   expect(snap).toMatchSnapshot()
 })
-
-// test('Header snapshot' ,() =>{
-//   const snap = renderer.create(
-//     <Header />
-//   ).toJSON();
-
-//   expect(snap).toMatchSnapshot
-// })
