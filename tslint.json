@@ -11,5 +11,6 @@
             "dirxml",
             "log"
         ],
+        "member-access": false,
     "rulesDirectory": []
 }}

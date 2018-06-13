@@ -1,10 +1,11 @@
-import React from "react";
+import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 // export interface Props {}
 // interface State {}
 
 export default class Header extends React.Component {
+
   public render() {
     return (
       <View style={styles.header}>
