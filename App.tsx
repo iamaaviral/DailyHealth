@@ -28,13 +28,28 @@ export default class App extends Component<any, any> {
         weight: 64,
        },
        editing: false,
+       value: 45,
     };
   }
 
-  onSubmit = () => {
-    this.setState({
-      editing : !this.state.editing,
-    });
+  onSubmit = (data: any) => {
+    if (this.state.editing) {
+      // this.setState({
+      //   value: data,
+      //   editing : !this.state.editing,
+      // });
+    this.setState((prevState: any) => ({
+    data: {
+      ...prevState.data,
+      weight: data,
+  },
+  editing : !this.state.editing,
+}));
+} else {
+      this.setState({
+        editing : !this.state.editing,
+      });
+    }
   }
   public render() {
     return (
@@ -45,9 +60,12 @@ export default class App extends Component<any, any> {
                   screenProps={{
                     data: this.state.data,
                     editing: this.state.editing,
+                    // handleClick() {this.onSubmit.bind(this); },
+                    handlerFromParent: this.onSubmit.bind(this),
                   }}
                 />
               </View>
+            <Text> {this.state.value}</Text>
               <Bmi
                 data={this.state.data}
                 handleClick={this.onSubmit.bind(this)}

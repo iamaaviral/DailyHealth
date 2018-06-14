@@ -6,6 +6,7 @@ import Activity_list from "./activity_list";
 export interface IPinPageProps {
   screenProps: any;
   tabBarLabel: string;
+  handlerFromParent: any;
 }
 export interface IPinPageState {
   screenNumber: number;
@@ -41,6 +42,7 @@ export default class MksPage extends React.Component<
             data={this.props.screenProps.data}
             screenNumber={this.state.screenNumber}
             editing={this.props.screenProps.editing}
+            handlerFromParent = {this.props.screenProps.handlerFromParent}
           />
         </View>
       </View>

@@ -6,21 +6,13 @@ export interface IPinPageProps {
   data: any;
   handleClick: any;
 }
-export interface IPinPageState {
-  weight: number;
-  height: number;
-}
-export default class Bmi extends React.Component<IPinPageProps, IPinPageState> {
+export default class Bmi extends React.Component<IPinPageProps, any> {
   constructor(props: IPinPageProps) {
     super(props);
-    this.state = {
-      height: this.props.data.height,
-      weight: this.props.data.weight,
-    };
 }
 
   public render() {
-    const bmi = Math.round((this.state.weight / (this.state.height * this.state.height)) * 100) / 100;
+    const bmi = Math.round((this.props.data.weight / (this.props.data.height * this.props.data.height)) * 100) / 100;
     return (
       <View style={styles.bmi}>
         <Text style={styles.bmi_text}>

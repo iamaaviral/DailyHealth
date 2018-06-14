@@ -5,6 +5,7 @@ export interface IDataPageProps {
   data: any;
   screenNumber: number;
   editing: boolean;
+  handlerFromParent: any;
 }
 
 export interface IDataPageState {
@@ -15,13 +16,22 @@ export default class ActivityData extends React.Component<IDataPageProps, IDataP
   constructor(props: IDataPageProps) {
     super(props);
     this.state = {
-      text: "upadate your data",
+      text: "",
     };
   }
 
   // public updateTextField = (value: string) => {
-  //   TodosStore.updateTextInputValue(value);
   // }
+  handlerFromParent(evt: any) {
+    evt.preventDefault();
+    // pass the input field value to the event handler passed
+    // as a prop by the parent (App)
+    this.props.handlerFromParent(this.state.text);
+
+    this.setState({
+      text: "",
+    });
+  }
 
   public render() {
     if (this.props.screenNumber === 1) {
@@ -31,15 +41,18 @@ export default class ActivityData extends React.Component<IDataPageProps, IDataP
           <View style={styles.Activity}>
             <View style={styles.Activity_row}>
             <TextInput
-                value={this.props.data.weight}
+                value={this.state.text}
                 onChangeText={(text) => this.setState({text})}
+                onSubmitEditing = {this.handlerFromParent.bind(this)}
               /><Text style={styles.Activity_text}>kg</Text>
             </View>
             <View style={styles.Activity_row}>
-            <TextInput
-                value={this.props.data.height}
+            {/* <TextInput
+                value={this.state.text}
                 onChangeText={(text) => this.setState({text})}
-              /><Text style={styles.Activity_text}> m</Text>
+                onSubmitEditing = {this.handlerFromParent.bind(this)}
+              /><Text style={styles.Activity_text}> m</Text> */}
+              <Text style={styles.Activity_text}>{this.props.data.height} steps</Text>
             </View>
             <View style={styles.Activity_row}>
               <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
@@ -99,10 +112,11 @@ export default class ActivityData extends React.Component<IDataPageProps, IDataP
               /><Text style={styles.Activity_text}>g</Text>
             </View>
             <View style={styles.Activity_row}>
-            <TextInput
+            {/* <TextInput
                 value={this.props.data.height}
                 onChangeText={(text) => this.setState({text})}
-              /><Text style={styles.Activity_text}> cm</Text>
+              /><Text style={styles.Activity_text}> cm</Text> */}
+              <Text style={styles.Activity_text}>{this.props.data.height} steps</Text>
             </View>
             <View style={styles.Activity_row}>
               <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
