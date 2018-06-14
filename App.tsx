@@ -65,7 +65,6 @@ export default class App extends Component<any, any> {
                   }}
                 />
               </View>
-            <Text> {this.state.value}</Text>
               <Bmi
                 data={this.state.data}
                 handleClick={this.onSubmit.bind(this)}
