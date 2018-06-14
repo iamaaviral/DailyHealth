@@ -32,7 +32,7 @@ export default class App extends Component<any, any> {
     };
   }
 
-  onSubmit = (data: any) => {
+  onSubmit = (data: any, dataHeight: any) => {
     if (this.state.editing) {
       // this.setState({
       //   value: data,
@@ -41,6 +41,7 @@ export default class App extends Component<any, any> {
     this.setState((prevState: any) => ({
     data: {
       ...prevState.data,
+      height: dataHeight,
       weight: data,
   },
   editing : !this.state.editing,

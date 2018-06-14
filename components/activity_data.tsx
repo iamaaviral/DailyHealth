@@ -10,13 +10,18 @@ export interface IDataPageProps {
 
 export interface IDataPageState {
   text: string;
+  textHeight: string;
 }
 
-export default class ActivityData extends React.Component<IDataPageProps, IDataPageState> {
+export default class ActivityData extends React.Component<
+  IDataPageProps,
+  IDataPageState
+> {
   constructor(props: IDataPageProps) {
     super(props);
     this.state = {
-      text: "",
+      text: this.props.data.weight,
+      textHeight: this.props.data.height,
     };
   }
 
@@ -24,47 +29,57 @@ export default class ActivityData extends React.Component<IDataPageProps, IDataP
   // }
   handlerFromParent(evt: any) {
     evt.preventDefault();
+    const value: any = this.state.text;
+    const valueHeight: any = this.state.textHeight;
     // pass the input field value to the event handler passed
     // as a prop by the parent (App)
-    this.props.handlerFromParent(this.state.text);
-
-    this.setState({
-      text: "",
-    });
+    if (this.props.screenNumber === 1) {
+      this.props.handlerFromParent(value, valueHeight);
+    } else if (this.props.screenNumber === 2) {
+      this.props.handlerFromParent(value / 1000, valueHeight / 100);
+    }
   }
 
   public render() {
     if (this.props.screenNumber === 1) {
       if (this.props.editing) {
-
         return (
           <View style={styles.Activity}>
             <View style={styles.Activity_row}>
-            <TextInput
+              <TextInput
                 value={this.state.text}
-                onChangeText={(text) => this.setState({text})}
+                onChangeText={(text) => this.setState({ text })}
+                onSubmitEditing={this.handlerFromParent.bind(this)}
+              />
+              <Text style={styles.Activity_text}>kg</Text>
+            </View>
+            <View style={styles.Activity_row}>
+              <TextInput
+                value={this.state.textHeight}
+                onChangeText={(textHeight) => this.setState({textHeight})}
                 onSubmitEditing = {this.handlerFromParent.bind(this)}
-              /><Text style={styles.Activity_text}>kg</Text>
+              />
+              <Text style={styles.Activity_text}> m</Text>
+              </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>
+                {this.props.data.steps} steps
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-            {/* <TextInput
-                value={this.state.text}
-                onChangeText={(text) => this.setState({text})}
-                onSubmitEditing = {this.handlerFromParent.bind(this)}
-              /><Text style={styles.Activity_text}> m</Text> */}
-              <Text style={styles.Activity_text}>{this.props.data.height} steps</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.distance} m
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.climbed} m
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.distance} m</Text>
-            </View>
-            <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.climbed} m</Text>
-            </View>
-            <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.calories / 1000} kcal</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.calories / 1000} kcal
+              </Text>
             </View>
             <View style={styles.Activity_row}>
               <Text style={styles.Activity_text}>
@@ -77,22 +92,34 @@ export default class ActivityData extends React.Component<IDataPageProps, IDataP
         return (
           <View style={styles.Activity}>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.weight} kg</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.weight} kg
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.height} m</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.height} m
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.steps} steps
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.distance} m</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.distance} m
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.climbed} m</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.climbed} m
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.calories / 1000} kcal</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.calories / 1000} kcal
+              </Text>
             </View>
             <View style={styles.Activity_row}>
               <Text style={styles.Activity_text}>
@@ -100,35 +127,46 @@ export default class ActivityData extends React.Component<IDataPageProps, IDataP
               </Text>
             </View>
           </View>
-        ); }
+        );
+      }
     } else if (this.props.screenNumber === 2) {
       if (this.props.editing) {
         return (
           <View style={styles.Activity}>
             <View style={styles.Activity_row}>
-            <TextInput
+              <TextInput
                 value={this.props.data.weight}
-                onChangeText={(text) => this.setState({text})}
-              /><Text style={styles.Activity_text}>g</Text>
+                onChangeText={(text) => this.setState({ text })}
+                onSubmitEditing={this.handlerFromParent.bind(this)}
+              />
+              <Text style={styles.Activity_text}>g</Text>
             </View>
             <View style={styles.Activity_row}>
-            {/* <TextInput
+              <TextInput
                 value={this.props.data.height}
-                onChangeText={(text) => this.setState({text})}
-              /><Text style={styles.Activity_text}> cm</Text> */}
-              <Text style={styles.Activity_text}>{this.props.data.height} steps</Text>
+                onChangeText={(textHeight) => this.setState({textHeight})}
+                onSubmitEditing = {this.handlerFromParent.bind(this)}
+              /><Text style={styles.Activity_text}> cm</Text>
+              </View>
+            <View style={styles.Activity_row}>
+              <Text style={styles.Activity_text}>
+                {this.props.data.steps} steps
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.distance * 100} cm
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.distance * 100} cm</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.climbed * 100} cm
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.climbed * 100} cm</Text>
-            </View>
-            <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.calories } cal</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.calories} cal
+              </Text>
             </View>
             <View style={styles.Activity_row}>
               <Text style={styles.Activity_text}>
@@ -141,22 +179,34 @@ export default class ActivityData extends React.Component<IDataPageProps, IDataP
         return (
           <View style={styles.Activity}>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.weight * 1000} g</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.weight * 1000} g
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.height * 100} cm</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.height * 100} cm
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.steps} steps</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.steps} steps
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.distance * 100} cm</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.distance * 100} cm
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.climbed * 100} cm</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.climbed * 100} cm
+              </Text>
             </View>
             <View style={styles.Activity_row}>
-              <Text style={styles.Activity_text}>{this.props.data.calories } cal</Text>
+              <Text style={styles.Activity_text}>
+                {this.props.data.calories} cal
+              </Text>
             </View>
             <View style={styles.Activity_row}>
               <Text style={styles.Activity_text}>
@@ -166,9 +216,9 @@ export default class ActivityData extends React.Component<IDataPageProps, IDataP
           </View>
         );
       }
-      }
     }
   }
+}
 
 const styles = StyleSheet.create({
   Activity: {
