@@ -4,7 +4,7 @@ import { Platform, StyleSheet, Text, View } from "react-native";
 import Bmi from "./components/bmi";
 import { Tabs } from "./components/config/router";
 import Header from "./components/Header";
-import Login from "./components/Login";
+import Login from "./components/login/Login";
 
 // const word: any = (data).name;
 
@@ -56,8 +56,7 @@ export default class App extends Component<any, any> {
   public render() {
     return (
        <View style={styles.container}>
-              <Header />
-              <Login />
+              {/* <Header />
               <View style={styles.body}>
                 <Tabs
                   screenProps={{
@@ -71,7 +70,9 @@ export default class App extends Component<any, any> {
               <Bmi
                 data={this.state.data}
                 handleClick={this.onSubmit.bind(this)}
-              />
+              /> */}
+
+              <Login />
             </View>
     );
   }
@@ -86,9 +87,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   container: {
-    alignItems: "center",
-    alignSelf: "stretch",
     flex: 1,
-    justifyContent: "center",
   },
 });
