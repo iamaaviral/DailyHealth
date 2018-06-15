@@ -56,7 +56,7 @@ export default class App extends Component<any, any> {
   public render() {
     return (
        <View style={styles.container}>
-              {/* <Header />
+              <Header />
               <View style={styles.body}>
                 <Tabs
                   screenProps={{
@@ -70,9 +70,9 @@ export default class App extends Component<any, any> {
               <Bmi
                 data={this.state.data}
                 handleClick={this.onSubmit.bind(this)}
-              /> */}
+              />
 
-              <Login />
+              {/* // <Login /> */}
             </View>
     );
   }

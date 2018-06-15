@@ -13,14 +13,15 @@ export default class LoginForm extends React.Component {
             // onSubmitEditing = {() => this.passwordInput.focus()}
             placeholder="Enter your username"
             placeholderTextColor="rgba(255, 255, 255, 0.7)"
-            returnKeyType = "next" />
+            returnKeyType = "next"
+            underlineColorAndroid= "transparent" />
         <TextInput style={styles.input}
             placeholder="password"
             placeholderTextColor="rgba(255, 255, 255, 0.7)"
             returnKeyType = "go"
             secureTextEntry
             // ref={(input) => this.passwordInput = input}
-            />
+            underlineColorAndroid= "transparent" />
 
         <TouchableOpacity style={styles.buttonContainer}>
             <Text style={styles.buttonText}>Login</Text>
@@ -28,7 +29,14 @@ export default class LoginForm extends React.Component {
 
          <View style={{flexDirection: "row"}}>
             <View style={{backgroundColor: "black", height: 2, flex: 1, alignSelf: "center"}} />
-            <Text style={{ alignSelf: "center", paddingHorizontal: 5, fontSize: 18, borderWidth: 1, borderRadius: 100, borderColor: 'black',  }}>OR</Text>
+            <Text style={{
+                alignSelf: "center",
+                borderColor: "black",
+                borderRadius: 100,
+                borderWidth: 1,
+                fontSize: 18,
+                paddingHorizontal: 5,
+                }}>OR</Text>
             <View style={{backgroundColor: "black", height: 2, flex: 1, alignSelf: "center"}} />
         </View>
           <LoginButton style={styles.buttonContainer}

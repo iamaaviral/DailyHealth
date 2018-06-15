@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
   logoContainer: {
     alignItems: "center",
     alignSelf: "stretch",
-    justifyContent: "center",
     flex: 15,
     flexDirection: "column",
+    justifyContent: "center",
   },
   title: {
     color: "#FFF",
