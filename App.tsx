@@ -4,6 +4,7 @@ import { Platform, StyleSheet, Text, View } from "react-native";
 import Bmi from "./components/bmi";
 import { Tabs } from "./components/config/router";
 import Header from "./components/Header";
+import Login from "./components/Login";
 
 // const word: any = (data).name;
 
@@ -56,6 +57,7 @@ export default class App extends Component<any, any> {
     return (
        <View style={styles.container}>
               <Header />
+              <Login />
               <View style={styles.body}>
                 <Tabs
                   screenProps={{
