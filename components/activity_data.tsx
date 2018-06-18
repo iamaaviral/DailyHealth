@@ -47,6 +47,10 @@ export default class ActivityData extends React.Component<
           <View style={styles.Activity}>
             <View style={styles.Activity_row}>
               <TextInput
+              style=
+              {{
+                color : "black", height: 40,
+              }}
                   underlineColorAndroid= "black"
                 value={this.state.text}
                 onChangeText={(text) => this.setState({ text })}
@@ -56,7 +60,11 @@ export default class ActivityData extends React.Component<
             </View>
             <View style={styles.Activity_row}>
               <TextInput
-                  underlineColorAndroid= "black"
+              style=
+              {{
+                color : "black", height: 40,
+              }}
+                underlineColorAndroid= "black"
                 value={this.state.textHeight}
                 onChangeText={(textHeight) => this.setState({textHeight})}
                 onSubmitEditing = {this.handlerFromParent.bind(this)}
@@ -136,7 +144,7 @@ export default class ActivityData extends React.Component<
         return (
           <View style={styles.Activity}>
             <View style={styles.Activity_row}>
-              <TextInput
+              <TextInput style= {{ color : "black", height: 40 }}
                   underlineColorAndroid= "black"
                 value={this.props.data.weight}
                 onChangeText={(text) => this.setState({ text })}
@@ -146,6 +154,10 @@ export default class ActivityData extends React.Component<
             </View>
             <View style={styles.Activity_row}>
               <TextInput
+              style=
+              {{
+                color : "black", height: 40,
+              }}
                   underlineColorAndroid= "black"
                 value={this.props.data.height}
                 onChangeText={(textHeight) => this.setState({textHeight})}
