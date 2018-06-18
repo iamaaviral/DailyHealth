@@ -7,6 +7,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import LoginForm from "./components/register/LoginForm";
 
+import { StackNavigator } from "react-navigation";
+
 // const word: any = (data).name;
 
 const instructions = Platform.select({
@@ -16,8 +18,15 @@ const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
 });
 
-export default class App extends Component<any, any> {
-  public render() {
-    return (<LoginForm /> );
-  }
-}
+// export default class App extends Component<any, any> {
+//   public render() {
+//     return (<LoginForm /> );
+//   }
+// }
+
+const App = StackNavigator({
+  ScreenOne: { screen: LoginForm},
+  ScreenTwo: { screen: Main},
+});
+
+export default App;

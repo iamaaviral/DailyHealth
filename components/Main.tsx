@@ -1,12 +1,51 @@
 import * as React from "react";
 import { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Bmi from "./bmi";
 import { Tabs } from "./config/router";
 import Header from "./Header";
 import LoginForm from "./register/LoginForm";
 
 export default class Main extends Component<any, any> {
+    // static navigationOptions = ({ navigation }: { navigation: any}) => {
+    //     return {
+    //       title: `Daily Health`,
+    //     };
+    //   }
+    static navigationOptions = {
+    headerStyle: {
+    backgroundColor: "rgba(0,170,170,0.1)",
+    elevation: 0,
+    height: 70,
+  },
+    headerRight: (
+      <TouchableOpacity
+        style={{
+          alignItems: "center",
+          backgroundColor: "rgba(250, 250, 250, 0.7)",
+          borderRadius: 50,
+          height: 45,
+          justifyContent: "center",
+          margin: 5,
+          shadowColor: "black",
+          shadowOffset: {
+            height: 2,
+            width: 2,
+          },
+          shadowOpacity: 0.5,
+          width: 45,
+        }}
+        >
+          <Text style= {{ fontSize: 15, color: "black"}}>
+            ✌︎
+          </Text>
+        </TouchableOpacity>),
+
+    // headerTitleStyle: {
+    // },
+    title: `Daily Health`,
+  };
+
   constructor(props: any) {
     super(props);
     this.state = {
@@ -41,9 +80,11 @@ export default class Main extends Component<any, any> {
     }
   }
   public render() {
+
+    const { state, navigate } = this.props.navigation;
     return (
        <View style={styles.container}>
-              <Header />
+              {/* <Header /> */}
               <View style={styles.body}>
                 <Tabs
                   screenProps={{

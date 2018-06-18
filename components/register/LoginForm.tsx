@@ -1,16 +1,31 @@
 import * as React from "react";
-import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import {KeyboardAvoidingView,
+         StyleSheet,
+         Text,
+         TextInput,
+         TouchableHighlight,
+         TouchableOpacity,
+          View } from "react-native";
 import Login from "./Login";
 
-export default class LoginForm extends React.Component {
+export interface INavigatePageProps {
+  navigation: any;
+}
+export default class LoginForm extends React.Component<INavigatePageProps, any> {
+
+  static navigationOptions = {
+    header: null,
+  };
+
   public render() {
+
     return (
       <KeyboardAvoidingView behavior= "padding" style={styles.container}>
         <View style={styles.logoContainer}>
             <Text style={styles.title}>An App made to simplify your daily health Track</Text>
          </View>
         <View style={styles.formContainer}>
-        <Login />
+        <Login navigate=  { this.props.navigation } />
         </View>
         </KeyboardAvoidingView>
     );

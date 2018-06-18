@@ -3,8 +3,10 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-nativ
 const FBSDK = require("react-native-fbsdk");
 const { LoginButton, AccessToken } = FBSDK;
 
-export default class Login extends React.Component {
+export default class Login extends React.Component<any, any> {
   public render() {
+
+    const { navigate } = this.props.navigate;
     return (
       <View style={styles.container}>
         <TextInput style={styles.input}
@@ -23,7 +25,8 @@ export default class Login extends React.Component {
             // ref={(input) => this.passwordInput = input}
             underlineColorAndroid= "transparent" />
 
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonContainer}
+          onPress={() => navigate("ScreenTwo", {screen: "Screen Two"})}>
             <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
 
