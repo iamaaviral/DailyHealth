@@ -1,9 +1,0 @@
-
-    const { navigate } = this.props.navigate;
-    if (error) {
-      console.log("Error fetching data: " + error.toString());
-    } else {
-      // console.log("Result Name: " + result.name);
-      this.props.sendData(result.name);
-      // this.props.navigate("ScreenTwo", {screen: "Screen Two"});
-      navigate("ScreenTwo", {screen: "Screen Two"});
