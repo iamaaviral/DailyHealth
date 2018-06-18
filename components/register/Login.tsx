@@ -68,10 +68,13 @@ export default class Login extends React.Component<any, any> {
     );
   }
   _responseInfoCallback = (error: any, result: any) => {
+
+    const { navigate } = this.props.navigate;
     if (error) {
       console.log("Error fetching data: " + error.toString());
     } else {
       console.log("Result Name: " + result.name);
+      navigate("ScreenTwo", {screen: "Screen Two"});
     }
   }
 }
