@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 const FBSDK = require("react-native-fbsdk");
-const { LoginButton, AccessToken } = FBSDK;
+const { LoginButton, LoginManager, AccessToken, GraphRequest, GraphRequestManager } = FBSDK;
 
 export default class Login extends React.Component<any, any> {
   public render() {
@@ -43,7 +43,7 @@ export default class Login extends React.Component<any, any> {
             <View style={{backgroundColor: "black", height: 2, flex: 1, alignSelf: "center"}} />
         </View>
           <LoginButton style={styles.buttonContainer}
-            publishPermissions={["publish_actions"]}
+            readPermissions={["email"]}
             onLoginFinished={(error: any, result: any) => {
               if (error) {
                 alert("login has error: " + result.error);
@@ -51,7 +51,14 @@ export default class Login extends React.Component<any, any> {
                 alert("login is cancelled.");
               } else {
                 AccessToken.getCurrentAccessToken().then((data: any) => {
-                  alert(data.accessToken.toString());
+                  // alert(data.accessToken.toString());
+                  const infoRequest = new GraphRequest(
+                    "/me?fields=name,picture",
+                    null,
+                    this._responseInfoCallback,
+                  );
+                  // Start the graph request.
+                  new GraphRequestManager().addRequest(infoRequest).start();
                 });
               }
             }}
@@ -59,6 +66,13 @@ export default class Login extends React.Component<any, any> {
           />
         </View>
     );
+  }
+  _responseInfoCallback = (error: any, result: any) => {
+    if (error) {
+      console.log("Error fetching data: " + error.toString());
+    } else {
+      console.log("Result Name: " + result.name);
+    }
   }
 }
 
