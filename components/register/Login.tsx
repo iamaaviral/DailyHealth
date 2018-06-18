@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-nativ
 const FBSDK = require("react-native-fbsdk");
 const { LoginButton, AccessToken } = FBSDK;
 
-export default class LoginForm extends React.Component {
+export default class Login extends React.Component {
   public render() {
     return (
       <View style={styles.container}>

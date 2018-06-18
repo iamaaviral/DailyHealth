@@ -1,8 +1,8 @@
 import * as React from "react";
 import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import LoginForm from "./loginForm";
+import Login from "./Login";
 
-export default class Login extends React.Component {
+export default class LoginForm extends React.Component {
   public render() {
     return (
       <KeyboardAvoidingView behavior= "padding" style={styles.container}>
@@ -10,7 +10,7 @@ export default class Login extends React.Component {
             <Text style={styles.title}>An App made to simplify your daily health Track</Text>
          </View>
         <View style={styles.formContainer}>
-        <LoginForm />
+        <Login />
         </View>
         </KeyboardAvoidingView>
     );
