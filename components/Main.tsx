@@ -3,7 +3,6 @@ import { Component } from "react";
 import { Platform, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Bmi from "./bmi";
 import { Tabs } from "./config/router";
-import Header from "./Header";
 import LoginForm from "./register/LoginForm";
 
 export default class Main extends Component<any, any> {
@@ -85,7 +84,6 @@ export default class Main extends Component<any, any> {
     const otherParam = navigation.getParam("otherParam", "some default value");
     return (
        <View style={styles.container}>
-              {/* <Header /> */}
               <View style={styles.body}>
                 <Tabs
                   screenProps={{
