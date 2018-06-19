@@ -2,1136 +2,320 @@
 
 exports[`App snapshot 1`] = `
 <View
+  onLayout={[Function]}
   style={
-    Object {
-      "alignItems": "center",
-      "alignSelf": "stretch",
-      "flex": 1,
-      "justifyContent": "center",
-    }
+    Array [
+      Object {
+        "flex": 1,
+      },
+    ]
   }
 >
   <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
     style={
-      Object {
-        "alignSelf": "stretch",
-        "backgroundColor": "rgba(0,170,170,0.1)",
-        "flex": 1,
-        "flexDirection": "column",
-        "paddingBottom": 20,
-        "paddingTop": 20,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+      Array [
         Object {
-          "fontSize": 25,
-          "fontWeight": "bold",
-          "textAlign": "center",
-        }
-      }
-    >
-      Daily health
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "alignSelf": "stretch",
-        "flex": 15,
-        "flexDirection": "column",
-      }
+          "flex": 1,
+          "flexDirection": "column-reverse",
+        },
+        Object {
+          "backgroundColor": "#000",
+        },
+      ]
     }
   >
     <View
-      collapsable={false}
       style={
-        Array [
-          Object {
-            "flex": 1,
-            "overflow": "hidden",
-          },
-          Object {
-            "flex": 1,
-          },
-        ]
+        Object {
+          "flex": 1,
+        }
       }
     >
       <View
-        onLayout={[Function]}
+        pointerEvents="auto"
         style={
           Object {
-            "flex": 1,
+            "backgroundColor": "#E9E9EF",
+            "bottom": 0,
+            "left": 0,
+            "marginTop": -64,
+            "opacity": 1,
+            "position": "absolute",
+            "right": 0,
+            "shadowColor": "black",
+            "shadowOffset": Object {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 5,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
           }
         }
       >
         <View
-          onMoveShouldSetResponder={[Function]}
-          onMoveShouldSetResponderCapture={[Function]}
-          onResponderEnd={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderReject={[Function]}
-          onResponderRelease={[Function]}
-          onResponderStart={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          onStartShouldSetResponderCapture={[Function]}
+          enabled={true}
+          keyboardVerticalOffset={0}
+          onLayout={[Function]}
           style={
-            Object {
-              "alignItems": "stretch",
-              "flex": 1,
-              "flexDirection": "row",
-            }
+            Array [
+              Object {
+                "backgroundColor": "#3498db",
+                "flex": 1,
+              },
+              Object {
+                "paddingBottom": 0,
+              },
+            ]
           }
         >
           <View
             style={
               Object {
-                "bottom": 0,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "flex": 15,
+                "flexDirection": "column",
+                "justifyContent": "center",
               }
             }
           >
-            <View
-              collapsable={false}
-              removeClippedSubviews={false}
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
               style={
                 Object {
-                  "flex": 1,
-                  "overflow": "hidden",
+                  "color": "#FFF",
+                  "marginTop": 10,
+                  "opacity": 0.9,
+                  "textAlign": "center",
+                  "width": 160,
                 }
               }
             >
-              <View
-                style={
-                  Object {
-                    "flex": 1,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "flex": 1,
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "padding": 15,
-                    }
-                  }
-                >
-                  <View>
-                    <View
-                      style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                          "justifyContent": "space-around",
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "justifyContent": "space-between",
-                            }
-                          }
-                        >
-                          <Image
-                            source={
-                              Object {
-                                "testUri": "../../../assets/weight.png",
-                              }
-                            }
-                            style={
-                              Object {
-                                "height": 15,
-                                "width": 15,
-                              }
-                            }
-                          />
-                          <Text
-                            accessible={true}
-                            allowFontScaling={true}
-                            ellipsizeMode="tail"
-                            style={
-                              Object {
-                                "fontSize": 17,
-                                "paddingLeft": 10,
-                              }
-                            }
-                          >
-                            Weight
-                          </Text>
-                        </View>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "justifyContent": "space-between",
-                            }
-                          }
-                        >
-                          <Image
-                            source={
-                              Object {
-                                "testUri": "../../../assets/height.png",
-                              }
-                            }
-                            style={
-                              Object {
-                                "height": 15,
-                                "width": 15,
-                              }
-                            }
-                          />
-                          <Text
-                            accessible={true}
-                            allowFontScaling={true}
-                            ellipsizeMode="tail"
-                            style={
-                              Object {
-                                "fontSize": 17,
-                                "paddingLeft": 10,
-                              }
-                            }
-                          >
-                            Height
-                          </Text>
-                        </View>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "justifyContent": "space-between",
-                            }
-                          }
-                        >
-                          <Image
-                            source={
-                              Object {
-                                "testUri": "../../../assets/steps.png",
-                              }
-                            }
-                            style={
-                              Object {
-                                "height": 15,
-                                "width": 15,
-                              }
-                            }
-                          />
-                          <Text
-                            accessible={true}
-                            allowFontScaling={true}
-                            ellipsizeMode="tail"
-                            style={
-                              Object {
-                                "fontSize": 17,
-                                "paddingLeft": 10,
-                              }
-                            }
-                          >
-                            Steps
-                          </Text>
-                        </View>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "justifyContent": "space-between",
-                            }
-                          }
-                        >
-                          <Image
-                            source={
-                              Object {
-                                "testUri": "../../../assets/distance.png",
-                              }
-                            }
-                            style={
-                              Object {
-                                "height": 15,
-                                "width": 15,
-                              }
-                            }
-                          />
-                          <Text
-                            accessible={true}
-                            allowFontScaling={true}
-                            ellipsizeMode="tail"
-                            style={
-                              Object {
-                                "fontSize": 17,
-                                "paddingLeft": 10,
-                              }
-                            }
-                          >
-                            Distance
-                          </Text>
-                        </View>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "justifyContent": "space-between",
-                            }
-                          }
-                        >
-                          <Image
-                            source={
-                              Object {
-                                "testUri": "../../../assets/climb.png",
-                              }
-                            }
-                            style={
-                              Object {
-                                "height": 15,
-                                "width": 15,
-                              }
-                            }
-                          />
-                          <Text
-                            accessible={true}
-                            allowFontScaling={true}
-                            ellipsizeMode="tail"
-                            style={
-                              Object {
-                                "fontSize": 17,
-                                "paddingLeft": 10,
-                              }
-                            }
-                          >
-                            Climbed
-                          </Text>
-                        </View>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "justifyContent": "space-between",
-                            }
-                          }
-                        >
-                          <Image
-                            source={
-                              Object {
-                                "testUri": "../../../assets/calories.png",
-                              }
-                            }
-                            style={
-                              Object {
-                                "height": 15,
-                                "width": 15,
-                              }
-                            }
-                          />
-                          <Text
-                            accessible={true}
-                            allowFontScaling={true}
-                            ellipsizeMode="tail"
-                            style={
-                              Object {
-                                "fontSize": 17,
-                                "paddingLeft": 10,
-                              }
-                            }
-                          >
-                            Calories
-                          </Text>
-                        </View>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "justifyContent": "space-between",
-                            }
-                          }
-                        >
-                          <Image
-                            source={
-                              Object {
-                                "testUri": "../../../assets/heart.png",
-                              }
-                            }
-                            style={
-                              Object {
-                                "height": 15,
-                                "width": 15,
-                              }
-                            }
-                          />
-                          <Text
-                            accessible={true}
-                            allowFontScaling={true}
-                            ellipsizeMode="tail"
-                            style={
-                              Object {
-                                "fontSize": 17,
-                                "paddingLeft": 10,
-                              }
-                            }
-                          >
-                            Heart rate
-                          </Text>
-                        </View>
-                      </View>
-                    </View>
-                  </View>
-                  <View>
-                    <View
-                      style={
-                        Object {
-                          "flex": 1,
-                          "flexDirection": "column",
-                          "justifyContent": "space-around",
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <Text
-                          accessible={true}
-                          allowFontScaling={true}
-                          ellipsizeMode="tail"
-                          style={
-                            Object {
-                              "fontSize": 17,
-                              "paddingLeft": 10,
-                            }
-                          }
-                        >
-                          64
-                           kg
-                        </Text>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <Text
-                          accessible={true}
-                          allowFontScaling={true}
-                          ellipsizeMode="tail"
-                          style={
-                            Object {
-                              "fontSize": 17,
-                              "paddingLeft": 10,
-                            }
-                          }
-                        >
-                          1.7
-                           m
-                        </Text>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <Text
-                          accessible={true}
-                          allowFontScaling={true}
-                          ellipsizeMode="tail"
-                          style={
-                            Object {
-                              "fontSize": 17,
-                              "paddingLeft": 10,
-                            }
-                          }
-                        >
-                          1505
-                           steps
-                        </Text>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <Text
-                          accessible={true}
-                          allowFontScaling={true}
-                          ellipsizeMode="tail"
-                          style={
-                            Object {
-                              "fontSize": 17,
-                              "paddingLeft": 10,
-                            }
-                          }
-                        >
-                          1050
-                           m
-                        </Text>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <Text
-                          accessible={true}
-                          allowFontScaling={true}
-                          ellipsizeMode="tail"
-                          style={
-                            Object {
-                              "fontSize": 17,
-                              "paddingLeft": 10,
-                            }
-                          }
-                        >
-                          0
-                           m
-                        </Text>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <Text
-                          accessible={true}
-                          allowFontScaling={true}
-                          ellipsizeMode="tail"
-                          style={
-                            Object {
-                              "fontSize": 17,
-                              "paddingLeft": 10,
-                            }
-                          }
-                        >
-                          0.037
-                           kcal
-                        </Text>
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "alignItems": "center",
-                            "flex": 1,
-                            "flexDirection": "row",
-                            "justifyContent": "space-between",
-                          }
-                        }
-                      >
-                        <Text
-                          accessible={true}
-                          allowFontScaling={true}
-                          ellipsizeMode="tail"
-                          style={
-                            Object {
-                              "fontSize": 17,
-                              "paddingLeft": 10,
-                            }
-                          }
-                        >
-                          72
-                           bps
-                        </Text>
-                      </View>
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </View>
+              An App made to simplify your daily health Track
+            </Text>
           </View>
           <View
-            style={null}
-          />
-        </View>
-      </View>
-      <View>
-        <View
-          onLayout={[Function]}
-          pointerEvents="box-none"
-          style={
-            Object {
-              "backgroundColor": "#F7F7F7",
-              "borderTopColor": "rgba(0, 0, 0, .3)",
-              "borderTopWidth": 0.5,
-              "flexDirection": "row",
-              "height": 49,
-              "paddingBottom": 0,
-              "paddingLeft": 0,
-              "paddingRight": 0,
-              "paddingTop": 0,
-            }
-          }
-        >
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "rgba(0, 0, 0, 0)",
-                "flex": 1,
+                "alignSelf": "stretch",
+                "flex": 15,
+                "flexDirection": "column",
               }
             }
           >
             <View
               style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flex": 1,
-                  },
-                  Object {
-                    "flexDirection": "column",
-                    "justifyContent": "flex-end",
-                  },
-                  undefined,
-                ]
+                Object {
+                  "padding": 20,
+                }
               }
             >
+              <TextInput
+                allowFontScaling={true}
+                autoCorrect={false}
+                keyboardType="email-address"
+                onChangeText={[Function]}
+                placeholder="Enter your username"
+                placeholderTextColor="rgba(255, 255, 255, 0.7)"
+                returnKeyType="next"
+                style={
+                  Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.2)",
+                    "color": "#FFF",
+                    "height": 40,
+                    "marginBottom": 10,
+                    "paddingHorizontal": 10,
+                  }
+                }
+                underlineColorAndroid="transparent"
+              />
+              <TextInput
+                allowFontScaling={true}
+                placeholder="password"
+                placeholderTextColor="rgba(255, 255, 255, 0.7)"
+                returnKeyType="go"
+                secureTextEntry={true}
+                style={
+                  Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.2)",
+                    "color": "#FFF",
+                    "height": 40,
+                    "marginBottom": 10,
+                    "paddingHorizontal": 10,
+                  }
+                }
+                underlineColorAndroid="transparent"
+              />
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#2980b9",
+                    "marginBottom": 10,
+                    "marginTop": 10,
+                    "opacity": 1,
+                    "paddingVertical": 15,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#FFF",
+                      "fontWeight": "700",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Login
+                </Text>
+              </View>
               <View
                 style={
-                  Array [
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <View
+                  style={
                     Object {
-                      "height": 29,
-                    },
-                    false,
-                    Object {
+                      "alignSelf": "center",
+                      "backgroundColor": "black",
                       "flex": 1,
-                    },
+                      "height": 2,
+                    }
+                  }
+                />
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "borderColor": "black",
+                      "borderRadius": 100,
+                      "borderWidth": 1,
+                      "fontSize": 18,
+                      "paddingHorizontal": 5,
+                    }
+                  }
+                >
+                  OR
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "backgroundColor": "black",
+                      "flex": 1,
+                      "height": 2,
+                    }
+                  }
+                />
+              </View>
+              <RCTFBLoginButton
+                onChange={[Function]}
+                onLoginFinished={[Function]}
+                onLogoutFinished={[Function]}
+                readPermissions={
+                  Array [
+                    "email",
                   ]
                 }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "center",
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "minWidth": 30,
-                      "opacity": 1,
-                      "position": "absolute",
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Array [
-                        false,
-                        false,
-                        false,
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "justifyContent": "center",
-                        },
-                        undefined,
-                      ]
-                    }
-                    underlayColor="white"
-                  >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={false}
-                      ellipsizeMode="tail"
-                      style={
-                        Array [
-                          Object {
-                            "color": "#3478f6",
-                            "fontSize": 35,
-                          },
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                            },
-                            undefined,
-                          ],
-                          Object {
-                            "fontFamily": "Material Icons",
-                            "fontStyle": "normal",
-                            "fontWeight": "normal",
-                          },
-                        ]
-                      }
-                    >
-                      
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "center",
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "minWidth": 30,
-                      "opacity": 0,
-                      "position": "absolute",
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Array [
-                        false,
-                        false,
-                        false,
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "justifyContent": "center",
-                        },
-                        undefined,
-                      ]
-                    }
-                    underlayColor="white"
-                  >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={false}
-                      ellipsizeMode="tail"
-                      style={
-                        Array [
-                          Object {
-                            "color": "#929292",
-                            "fontSize": 35,
-                          },
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                            },
-                            undefined,
-                          ],
-                          Object {
-                            "fontFamily": "Material Icons",
-                            "fontStyle": "normal",
-                            "fontWeight": "normal",
-                          },
-                        ]
-                      }
-                    >
-                      
-                    </Text>
-                  </View>
-                </View>
-              </View>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                numberOfLines={1}
                 style={
                   Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgba(52, 120, 246, 1)",
-                    "fontSize": 10,
-                    "marginBottom": 1.5,
-                    "textAlign": "center",
+                    "backgroundColor": "#2980b9",
+                    "marginBottom": 10,
+                    "marginTop": 10,
+                    "paddingVertical": 15,
                   }
                 }
-              >
-                in MKS
-              </Text>
-            </View>
-          </View>
-          <View
-            accessible={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "rgba(0, 0, 0, 0)",
-                "flex": 1,
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "flex": 1,
-                  },
-                  Object {
-                    "flexDirection": "column",
-                    "justifyContent": "flex-end",
-                  },
-                  undefined,
-                ]
-              }
-            >
-              <View
-                style={
-                  Array [
-                    Object {
-                      "height": 29,
-                    },
-                    false,
-                    Object {
-                      "flex": 1,
-                    },
-                  ]
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "center",
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "minWidth": 30,
-                      "opacity": 0,
-                      "position": "absolute",
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Array [
-                        false,
-                        false,
-                        false,
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "justifyContent": "center",
-                        },
-                        undefined,
-                      ]
-                    }
-                    underlayColor="white"
-                  >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={false}
-                      ellipsizeMode="tail"
-                      style={
-                        Array [
-                          Object {
-                            "color": "#3478f6",
-                            "fontSize": 35,
-                          },
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                            },
-                            undefined,
-                          ],
-                          Object {
-                            "fontFamily": "Material Icons",
-                            "fontStyle": "normal",
-                            "fontWeight": "normal",
-                          },
-                        ]
-                      }
-                    >
-                      
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "center",
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "minWidth": 30,
-                      "opacity": 1,
-                      "position": "absolute",
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Array [
-                        false,
-                        false,
-                        false,
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "justifyContent": "center",
-                        },
-                        undefined,
-                      ]
-                    }
-                    underlayColor="white"
-                  >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={false}
-                      ellipsizeMode="tail"
-                      style={
-                        Array [
-                          Object {
-                            "color": "#929292",
-                            "fontSize": 35,
-                          },
-                          Array [
-                            Object {
-                              "backgroundColor": "transparent",
-                            },
-                            undefined,
-                          ],
-                          Object {
-                            "fontFamily": "Material Icons",
-                            "fontStyle": "normal",
-                            "fontWeight": "normal",
-                          },
-                        ]
-                      }
-                    >
-                      
-                    </Text>
-                  </View>
-                </View>
-              </View>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                numberOfLines={1}
-                style={
-                  Object {
-                    "backgroundColor": "transparent",
-                    "color": "rgba(146, 146, 146, 1)",
-                    "fontSize": 10,
-                    "marginBottom": 1.5,
-                    "textAlign": "center",
-                  }
-                }
-              >
-                in CGS
-              </Text>
+              />
             </View>
           </View>
         </View>
       </View>
     </View>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "rgba(0,170,170,0.1)",
-        "flex": 2,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "fontSize": 18,
-          "fontWeight": "bold",
-        }
-      }
-    >
-      Your BMI : 
-      22.15
-    </Text>
     <View
       style={
         Object {
-          "flex": 1,
-          "paddingLeft": 125,
-          "paddingRight": 20,
-          "paddingVertical": 0,
+          "transform": Array [
+            Object {
+              "translateX": 0,
+            },
+          ],
         }
       }
     >
       <View
-        accessibilityComponentType="button"
-        accessibilityLabel="decrement"
-        accessibilityTraits={
-          Array [
-            "button",
-          ]
-        }
-        accessible={true}
-        isTVSelectable={true}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        onLayout={[Function]}
+        pointerEvents="box-none"
         style={
           Object {
-            "opacity": 1,
+            "backgroundColor": "#F7F7F7",
+            "borderBottomColor": "#A7A7AA",
+            "borderBottomWidth": 0.5,
+            "height": 64,
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 20,
           }
         }
       >
         <View
           style={
-            Array [
-              Object {},
-            ]
-          }
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Array [
-                Object {
-                  "color": "#007AFF",
-                  "fontSize": 18,
-                  "padding": 8,
-                  "textAlign": "center",
-                },
-                Object {
-                  "color": "blue",
-                },
-              ]
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
-          >
-            edit
-          </Text>
-        </View>
+          }
+        />
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
       </View>
     </View>
   </View>

@@ -1,9 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
-import Bmi from "./components/bmi";
-import { Tabs } from "./components/config/router";
-import Header from "./components/Header";
 import Main from "./components/Main";
 import LoginForm from "./components/register/LoginForm";
 
