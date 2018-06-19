@@ -4,6 +4,13 @@ const FBSDK = require("react-native-fbsdk");
 const { LoginButton, LoginManager, AccessToken, GraphRequest, GraphRequestManager } = FBSDK;
 
 export default class Login extends React.Component<any, any> {
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      text: " ",
+    };
+  }
   public render() {
 
     const { navigate } = this.props.navigate;
@@ -16,7 +23,8 @@ export default class Login extends React.Component<any, any> {
             placeholder="Enter your username"
             placeholderTextColor="rgba(255, 255, 255, 0.7)"
             returnKeyType = "next"
-            underlineColorAndroid= "transparent" />
+            underlineColorAndroid= "transparent"
+            onChangeText={(text) => this.setState({ text })}/>
         <TextInput style={styles.input}
             placeholder="password"
             placeholderTextColor="rgba(255, 255, 255, 0.7)"
@@ -26,7 +34,10 @@ export default class Login extends React.Component<any, any> {
             underlineColorAndroid= "transparent" />
 
         <TouchableOpacity style={styles.buttonContainer}
-          onPress={() => navigate("ScreenTwo", {screen: "Screen Two"})}>
+          onPress={() =>
+            navigate("ScreenTwo",
+                {otherParam: this.state.text.toUpperCase().substr(0, 2),
+                screen: "Screen Two"})}>
             <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
 
@@ -70,11 +81,17 @@ export default class Login extends React.Component<any, any> {
   _responseInfoCallback = (error: any, result: any) => {
 
     const { navigate } = this.props.navigate;
+    const str     = result.name;
+    const matches = str.match(/\b(\w)/g);              // ['J','S','O','N']
+    const acronym = matches.join("");
+
     if (error) {
       console.log("Error fetching data: " + error.toString());
     } else {
-      console.log("Result Name: " + result.name);
-      navigate("ScreenTwo", {screen: "Screen Two"});
+      // console.log("Result Name: " + result.name);
+      navigate("ScreenTwo",
+          { otherParam: acronym,
+            screen: "Screen Two" });
     }
   }
 }

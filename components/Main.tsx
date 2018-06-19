@@ -12,39 +12,39 @@ export default class Main extends Component<any, any> {
     //       title: `Daily Health`,
     //     };
     //   }
-    static navigationOptions = {
-    headerStyle: {
-    backgroundColor: "rgba(0,170,170,0.1)",
-    elevation: 0,
-    height: 70,
-  },
-    headerRight: (
-      <TouchableOpacity
-        style={{
-          alignItems: "center",
-          backgroundColor: "rgba(250, 250, 250, 0.7)",
-          borderRadius: 50,
-          height: 45,
-          justifyContent: "center",
-          margin: 5,
-          shadowColor: "black",
-          shadowOffset: {
-            height: 2,
-            width: 2,
+    static navigationOptions = ({ navigation }: { navigation: any }) => {
+      return {
+        headerRight: (
+          <TouchableOpacity
+            style={{
+              alignItems: "center",
+              backgroundColor: "rgba(250, 250, 250, 0.7)",
+              borderRadius: 50,
+              height: 45,
+              justifyContent: "center",
+              margin: 5,
+              shadowColor: "black",
+              shadowOffset: {
+                height: 2,
+                width: 2,
+              },
+              shadowOpacity: 0.5,
+              width: 45,
+            }}
+            >
+              <Text style= {{ fontSize: 15, color: "black"}}>
+                {/* ✌︎  */}
+                {navigation.getParam("otherParam", "bc")}
+              </Text>
+            </TouchableOpacity>),
+            headerStyle: {
+            backgroundColor: "rgba(0,170,170,0.1)",
+            elevation: 0,
+            height: 70,
           },
-          shadowOpacity: 0.5,
-          width: 45,
-        }}
-        >
-          <Text style= {{ fontSize: 15, color: "black"}}>
-            ✌︎
-          </Text>
-        </TouchableOpacity>),
-
-    // headerTitleStyle: {
-    // },
-    title: `Daily Health`,
-  };
+          title: "Daily Health",
+            };
+  }
 
   constructor(props: any) {
     super(props);
@@ -81,7 +81,8 @@ export default class Main extends Component<any, any> {
   }
   public render() {
 
-    const { state, navigate } = this.props.navigation;
+    const { navigation } = this.props;
+    const otherParam = navigation.getParam("otherParam", "some default value");
     return (
        <View style={styles.container}>
               {/* <Header /> */}
